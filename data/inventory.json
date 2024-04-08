@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Apples",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-07",
+    "servings": 5,
+    "best_before": "2024-04-14",
+    "is_deleted": false
+  },
+  {
+    "id": 2,
+    "name": "Rice",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-01",
+    "servings": 10,
+    "best_before": "2025-04-01",
+    "is_deleted": false
+  },
+  {
+    "id": 3,
+    "name": "Chicken",
+    "storing_place": "Freezer",
+    "create_time": "2024-03-30",
+    "servings": 4,
+    "best_before": "2024-05-30",
+    "is_deleted": true
+  },
+  {
+    "id": 4,
+    "name": "Bread",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-07",
+    "servings": 8,
+    "best_before": "2024-04-14",
+    "is_deleted": false
+  },
+  {
+    "id": 5,
+    "name": "Milk",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-07",
+    "servings": 4,
+    "best_before": "2024-04-14",
+    "is_deleted": false
+  },
+  {
+    "id": 6,
+    "name": "Eggs",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-06",
+    "servings": 12,
+    "best_before": "2024-04-20",
+    "is_deleted": false
+  },
+  {
+    "id": 7,
+    "name": "Carrots",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-05",
+    "servings": 5,
+    "best_before": "2024-04-19",
+    "is_deleted": false
+  },
+  {
+    "id": 8,
+    "name": "Potatoes",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-04",
+    "servings": 10,
+    "best_before": "2024-05-04",
+    "is_deleted": false
+  },
+  {
+    "id": 9,
+    "name": "Tomatoes",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-03",
+    "servings": 6,
+    "best_before": "2024-04-10",
+    "is_deleted": false
+  },
+  {
+    "id": 10,
+    "name": "Onions",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-02",
+    "servings": 8,
+    "best_before": "2024-05-02",
+    "is_deleted": false
+  },
+  {
+    "id": 11,
+    "name": "Garlic",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-01",
+    "servings": 10,
+    "best_before": "2024-06-01",
+    "is_deleted": false
+  },
+  {
+    "id": 12,
+    "name": "Bananas",
+    "storing_place": "Room temperature",
+    "create_time": "2024-04-07",
+    "servings": 6,
+    "best_before": "2024-04-14",
+    "is_deleted": false
+  },
+  {
+    "id": 13,
+    "name": "Spinach",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-06",
+    "servings": 3,
+    "best_before": "2024-04-11",
+    "is_deleted": false
+  },
+  {
+    "id": 14,
+    "name": "Beef",
+    "storing_place": "Freezer",
+    "create_time": "2024-04-05",
+    "servings": 5,
+    "best_before": "2024-10-05",
+    "is_deleted": false
+  },
+  {
+    "id": 15,
+    "name": "Fish",
+    "storing_place": "Freezer",
+    "create_time": "2024-04-04",
+    "servings": 4,
+    "best_before": "2024-10-04",
+    "is_deleted": false
+  },
+  {
+    "id": 16,
+    "name": "Salt",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-03",
+    "servings": 100,
+    "best_before": "2029-04-03",
+    "is_deleted": false
+  },
+  {
+    "id": 17,
+    "name": "Pepper",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-02",
+    "servings": 90,
+    "best_before": "2026-04-02",
+    "is_deleted": false
+  },
+  {
+    "id": 18,
+    "name": "Cinnamon",
+    "storing_place": "Pantry",
+    "create_time": "2024-04-01",
+    "servings": 85,
+    "best_before": "2027-04-01",
+    "is_deleted": false
+  },
+  {
+    "id": 19,
+    "name": "Cheese",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-07",
+    "servings": 8,
+    "best_before": "2024-04-21",
+    "is_deleted": false
+  },
+  {
+    "id": 20,
+    "name": "Butter",
+    "storing_place": "Refrigerator",
+    "create_time": "2024-04-06",
+    "servings": 20,
+    "best_before": "2024-05-06",
+    "is_deleted": false
+  }
+]
