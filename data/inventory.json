@@ -19,11 +19,11 @@
   },
   {
     "id": 3,
-    "name": "Chicken",
+    "name": "Chicken wings",
     "storing_place": "Freezer",
     "create_time": "2024-03-30",
     "servings": 4,
-    "best_before": "2024-05-30",
+    "best_before": "2024-06-30",
     "is_deleted": true
   },
   {
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "name": "Bananas",
-    "storing_place": "Room temperature",
+    "storing_place": "Pantry",
     "create_time": "2024-04-07",
     "servings": 6,
     "best_before": "2024-04-14",
@@ -127,11 +127,11 @@
   },
   {
     "id": 15,
-    "name": "Fish",
+    "name": "Chicken thigh",
     "storing_place": "Freezer",
     "create_time": "2024-04-04",
     "servings": 4,
-    "best_before": "2024-10-04",
+    "best_before": "2024-07-04",
     "is_deleted": false
   },
   {
