@@ -53,9 +53,9 @@ app.use((req, res, next) => {
 // add inventory
 app.post("/add", (req, res) =>{
     const parsedInventoryList = readFullInventoryList()
-    const inventoryRepeatCheck = parsedInventoryList.find((item) => item.name.toUpperCase() == req.body.name.toUpperCase())
-    if(inventoryRepeatCheck){
-        return res.status(409).send('food name exist')
+    const inventoryRepeatList = parsedInventoryList.find((item) => item.name.toUpperCase() == req.body.name.toUpperCase())
+    if(inventoryRepeatList){
+        return res.status(409).json(inventoryRepeatList)
     }
 
     const newInventory ={
