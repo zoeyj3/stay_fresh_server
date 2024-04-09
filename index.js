@@ -39,11 +39,17 @@ app.get("/inventory/:id", (req, res) => {
     }
     res.json(individualInventory);
 });
+
 // get individual inventory by name
-app.get("")
-
-
-
+app.get("/inventory-name/:name", (req, res) => {
+    const parsedInventoryList = readFullInventoryList()
+    const individualInventory = parsedInventoryList.find((item) => item.name == req.params.name)
+    // name validation check
+    if(!individualInventory){
+        return res.status(404).send('item not found');
+    }
+    res.json(individualInventory);
+});
 
 app.use((req, res, next) => {
     console.log("Middleware running on router");
