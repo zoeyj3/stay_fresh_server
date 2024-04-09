@@ -70,18 +70,28 @@ app.post("/add", (req, res) =>{
 // update inventory
 app.put("/inventory/:id", (req, res) => {
     const parsedInventoryList = readFullInventoryList()
-    let individualInventory = parsedInventoryList.filter((item) => item.id == req.params.id)
     
-    // id validation check
-   
-    const inventoryChecked = parsedInventoryList.find((item) => item.id == req.params.id)
+    inventoryChecked = false
+
+    for(let i=0; i<parsedInventoryList.length; i++)
+    {
+        if(parsedInventoryList[i].id==req.params.id){
+            inventoryChecked = true
+            parsedInventoryList[i].name = req.body.name
+            parsedInventoryList[i].create_time = req.body.create_time
+            parsedInventoryList[i].storing_place = req.body.storing_place
+            parsedInventoryList[i].best_before = req.body.best_before
+            parsedInventoryList[i].servings = req.body.servings
+        }
+    }
+
+    console.log(parsedInventoryList)
+
+
     if(!inventoryChecked){
         return res.status(404).send('item not found');
     }
     //replace the new item
-
-    const newList = readFullInventoryList();
-    newList.push(updateInventory);
-    fs.writeFileSync('./data/inventory.json',JSON.stringify(newList));
-    res.status(201).json(newList);
+    fs.writeFileSync('./data/inventory.json',JSON.stringify(parsedInventoryList));
+    res.status(201).json(parsedInventoryList);
 });
