@@ -77,12 +77,12 @@ app.post("/add", (req, res) =>{
 app.put("/inventory/:id", (req, res) => {
     const parsedInventoryList = readFullInventoryList()
     
-    inventoryChecked = false
+    isinventoryChecked = false
 
     for(let i=0; i<parsedInventoryList.length; i++)
     {
         if(parsedInventoryList[i].id==req.params.id){
-            inventoryChecked = true
+            isinventoryChecked = true
             parsedInventoryList[i].name = req.body.name
             parsedInventoryList[i].create_time = req.body.create_time
             parsedInventoryList[i].storing_place = req.body.storing_place
@@ -91,7 +91,7 @@ app.put("/inventory/:id", (req, res) => {
         }
     }
 
-    if(!inventoryChecked){
+    if(!isinventoryChecked){
         return res.status(404).send('item not found');
     }
     //replace the new item
