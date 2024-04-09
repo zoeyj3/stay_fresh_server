@@ -43,12 +43,13 @@ app.get("/inventory/:id", (req, res) => {
 // get individual inventory by name
 app.get("/inventory-name/:name", (req, res) => {
     const parsedInventoryList = readFullInventoryList()
-    const individualInventory = parsedInventoryList.find((item) => item.name == req.params.name)
+    const individualInventory = parsedInventoryList.find((item) => item.name.toUpperCase() == req.body.name.toUpperCase())
     // name validation check
     if(!individualInventory){
         return res.status(404).send('item not found');
     }
-    res.json(individualInventory);
+    res.json(individualInventory)
+    console.log(individualInventory);
 });
 
 app.use((req, res, next) => {
