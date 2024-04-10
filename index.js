@@ -105,3 +105,26 @@ app.put("/inventory/:id", (req, res) => {
     fs.writeFileSync('./data/inventory.json',JSON.stringify(parsedInventoryList));
     res.status(201).json(parsedInventoryList);
 });
+
+// delete inventory
+app.delete("/inventory/:id", (req, res) => {
+    const parsedInventoryList = readFullInventoryList()
+    
+    isinventoryDeleted = false
+
+    for(let i=0; i<parsedInventoryList.length; i++)
+    {
+        if(parsedInventoryList[i].id==req.params.id){
+            isinventoryDeleted = true
+            parsedInventoryList.splice(i, 1)
+            break;
+        }
+    }
+
+    if(!isinventoryDeleted){
+        return res.status(404).send('item not found');
+    }
+    //replace the new item
+    fs.writeFileSync('./data/inventory.json',JSON.stringify(parsedInventoryList));
+    res.status(201).json(parsedInventoryList);
+});
