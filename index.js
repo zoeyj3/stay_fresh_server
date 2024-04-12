@@ -23,9 +23,19 @@ function readFullInventoryList(){
     return parsedInventoryList
 }
 
+function addDaysToExpire(item){
+    const today = new Date()
+    const bestBeforeDate = new Date(item.best_before)
+    const timeDiff = bestBeforeDate - today
+    const days_to_expire = Math.ceil(timeDiff / (1000 * 60 * 60 * 24))
+    return { ...item, days_to_expire };
+}
+
 //get full list
 app.get("/inventory", (req, res) => {
-    res.json(readFullInventoryList());
+    let parsedInventoryList = readFullInventoryList()
+    parsedInventoryList = parsedInventoryList.map(item => addDaysToExpire(item))
+    res.json(parsedInventoryList);
 });
 
 //get individual inventory by id
@@ -37,17 +47,19 @@ app.get("/inventory/:id", (req, res) => {
     if(!inventoryChecked){
         return res.status(404).send('item not found');
     }
+    individualInventory[0] = addDaysToExpire(individualInventory[0])
     res.json(individualInventory);
 });
 
 // get individual inventory by name
 app.get("/inventory-name/:name", (req, res) => {
     const parsedInventoryList = readFullInventoryList()
-    const individualInventory = parsedInventoryList.filter((item) => item.name.toUpperCase().includes(req.params.name.toUpperCase()))
+    let individualInventory = parsedInventoryList.filter((item) => item.name.toUpperCase().includes(req.params.name.toUpperCase()))
     // name validation check
     if(!individualInventory || individualInventory.length === 0){
         return res.status(404).send('item not found');
     }
+    individualInventory = individualInventory.map(item => addDaysToExpire(item))
     res.json(individualInventory)
     console.log(individualInventory);
 });
