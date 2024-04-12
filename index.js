@@ -14,7 +14,13 @@ app.listen(8080, function() {
     console.log("Server is running on port " + 8080);
 });
 
-
+function getCurrentDate() {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
 
 //parse JSON file
 function readFullInventoryList(){
@@ -81,10 +87,10 @@ app.post("/add", (req, res) =>{
         id:uniqid(),
         name:req.body.name,
         storing_place:req.body.storing_place,
-        create_time:req.body.create_time,
+        create_time:getCurrentDate(),
+        update_time:getCurrentDate(),
         best_before:req.body.best_before,
         servings:req.body.servings,
-        is_deleted:req.body.is_deleted
     };
     const newList = readFullInventoryList();
     newList.push(newInventory);
@@ -104,6 +110,7 @@ app.put("/inventory/:id", (req, res) => {
             isinventoryChecked = true
             parsedInventoryList[i].name = req.body.name
             parsedInventoryList[i].create_time = req.body.create_time
+            parsedInventoryList[i].update_time = getCurrentDate()
             parsedInventoryList[i].storing_place = req.body.storing_place
             parsedInventoryList[i].best_before = req.body.best_before
             parsedInventoryList[i].servings = req.body.servings
