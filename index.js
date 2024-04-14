@@ -88,7 +88,7 @@ app.post("/add", (req, res) =>{
         name:req.body.name,
         storing_place:req.body.storing_place,
         create_time:getCurrentDate(),
-        update_time:getCurrentDate(),
+        updated_time:getCurrentDate(),
         best_before:req.body.best_before,
         servings:req.body.servings,
     };
@@ -110,7 +110,7 @@ app.put("/inventory/:id", (req, res) => {
             isinventoryChecked = true
             parsedInventoryList[i].name = req.body.name
             parsedInventoryList[i].create_time = req.body.create_time
-            parsedInventoryList[i].update_time = getCurrentDate()
+            parsedInventoryList[i].updated_time = getCurrentDate()
             parsedInventoryList[i].storing_place = req.body.storing_place
             parsedInventoryList[i].best_before = req.body.best_before
             parsedInventoryList[i].servings = req.body.servings
