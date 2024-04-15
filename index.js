@@ -30,9 +30,9 @@ function readFullInventoryList(){
 }
 
 function addDaysToExpire(item){
-    const today = new Date()
+    const today = new Date(getCurrentDate())
     const bestBeforeDate = new Date(item.best_before)
-    const timeDiff = bestBeforeDate - today
+    const timeDiff = bestBeforeDate.getTime() - today.getTime()
     const days_to_expire = Math.ceil(timeDiff / (1000 * 60 * 60 * 24))
     return { ...item, days_to_expire };
 }
