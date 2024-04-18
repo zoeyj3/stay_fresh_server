@@ -29,6 +29,8 @@ function readFullInventoryList(){
     return parsedInventoryList
 }
 
+const SAVED_LIST = readFullInventoryList()
+
 function addDaysToExpire(item){
     const today = new Date(getCurrentDate())
     const bestBeforeDate = new Date(item.best_before)
@@ -42,6 +44,12 @@ app.get("/inventory", (req, res) => {
     let parsedInventoryList = readFullInventoryList()
     parsedInventoryList = parsedInventoryList.map(item => addDaysToExpire(item))
     res.json(parsedInventoryList);
+});
+
+//reset full list
+app.get("/reset", (req, res) => {
+    fs.writeFileSync('./data/inventory.json',JSON.stringify(SAVED_LIST));
+    res.json(SAVED_LIST);
 });
 
 //get individual inventory by id
