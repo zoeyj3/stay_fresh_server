@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT ||8080;
 const fs = require("fs");
 const uniqid = require("uniqid");
 const cors = require("cors")
@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(cors());
 app.use("/static-files", express.static("public"));
 
-app.listen(8080, function() {
-    console.log("Server is running on port " + 8080);
+app.listen(PORT, function() {
+    console.log(`Server is running on port ${PORT}`);
 });
 
 function getCurrentDate() {
